@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/sky.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,8 +16,61 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>History API / Routing</section>
+					<section>
+						<section>Browsers no longer handle routing.</section>
+						<section style="display: flex; flex-direction: column; align-items: center;">
+							<p>SPAs to the rescue.</p> 
+							<img src="superman.jpg" alt="Superman">
+						</section>
+						<section>View as a function of state.</section>
+						<section>The DOM <b>Window</b> object provides access to the browser's session history through the <b>history</b> object</section>
+					</section>
+				<section>
+					<section>Instance methods of <em>History</em></section> 
+					<section>
+						<pre><code data-trim data-noescape>
+							window.history.back() // backward through history
+							window.history.forward() // forward throug history
+							window.history.go(-1) // back one page
+							window.history.go(1) // forward one page
+						</code></pre>
+					</section>
+					<section>
+						<p>history.pushState()</p>
+						<pre><code data-trim data-noescape>
+							pushState(state, unused)
+                            pushState(state, unused, url)	
+						</code></pre>
+						<p style="font-size: 20px;">Method pushState() adds an entry to the browser's session history stack.</p> 
+					</section>
+					<section>
+						<p>history.replaceState()</p>
+						<pre><code data-trim data-noescape>
+							replaceState(state, unused)
+                            replaceState(state, unused, url)	
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>Instance properties of <em>History</em></section> 
+					<section><b>history.length</b>
+						<p>//read-only property returns an integer representing the number of elements in the session history, including the currently loaded page</p>
+					</section>
+					<section><b>history.scrollRestoration</b>
+						<p>// allows web applications to explicitly set default scroll restoration behavior on history navigation.</p>
+					</section>
+					<section><b>history.state </b>
+						<p>// property returns a value representing the state at the top of the history stack</p>
+					</section>				
+				</section>
+				<section>
+					<ul style="font-weight: 700;">Sources
+						<li style="font-size:smaller; font-weight: 400;">https://developer.mozilla.org/en-US/docs/Web/API/History_API</li>
+						<li style="font-size:smaller; font-weight: 400;">https://medium.com/@george.norberg/history-api-getting-started-36bfc82ddefc</li>
+						<li style="font-size:smaller; font-weight: 400;">http://html5doctor.com/history-api/</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 
